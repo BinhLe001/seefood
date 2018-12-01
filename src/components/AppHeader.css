@@ -1,0 +1,19 @@
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: white;
+  padding: 18px 40px 18px 40px;
+  /* color: #4484ce; */
+}
+
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: black
+}
+
+.header-name {
+  font-size: 24px;
+  color: #4484ce;
+}

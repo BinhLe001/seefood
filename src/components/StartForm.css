@@ -1,0 +1,73 @@
+.form {
+  text-align: left;
+  margin: auto;
+  width: 40%;
+  border: 1px solid #696969;
+  border-radius: 3px;
+}
+
+.form-header {
+  background-color: #4484ce;
+  padding: 15px 0px 15px 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 2px 2px 0px 0px;
+}
+
+.form-body {
+  padding: 0px 30px 20px 30px;
+  background-color: white;
+  border-radius: 0px 0px 2px 2px;
+}
+
+.form-question {
+  width: 100%;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 0px 10px 0px;
+}
+
+.form-answer {
+  width: 100%;
+  text-align: center;
+}
+
+.answer-input {
+  width: 95%;
+  color: #696969;
+  background-color: #f4f4f4;
+  font-size: 16px;
+  border: 1px solid #696969;
+  border-radius: 3px;
+  margin: 0;
+  padding: 8px 8px 8px 8px;
+}
+
+.answer-input:focus {
+  outline: 0;
+}
+
+.button-div {
+  text-align: center;
+}
+
+.form-button {
+  margin-top: 30px;
+  padding: 8px 15px 8px 15px;
+  font-size: 16px;
+  color: white;
+  background-color: #4484ce;
+  border: none;
+  border-radius: 3px;
+}
+
+.form-button:focus {
+  box-shadow: 0 0 2pt 2pt #696969;
+  outline: 0;
+}
+
+.form-button:hover {
+  cursor: pointer;
+}

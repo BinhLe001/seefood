@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import AppHeader from "./components/AppHeader";
+import StartForm from "./components/StartForm";
+import "./App.css";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: "Binh Le"
+    };
+  }
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <AppHeader user={this.state.user} />
+        <div className="App-body">
+          <div className="Start-title">PERSONALIZED FOR YOU</div>
+          <div className="Start-form">
+            <StartForm user={this.state.user} />
+          </div>
+        </div>
       </div>
     );
   }
