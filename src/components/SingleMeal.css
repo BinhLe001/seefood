@@ -1,7 +1,83 @@
 .meal {
-    background-color: #F4F4F4;
-    color: #696969;
-    border-radius: 3px;
-    padding: 10px 10px 10px 10px;
-    margin: 0px 0px 15px 0px;
+  background-color: #f4f4f4;
+  color: #696969;
+  border-radius: 3px;
+  padding: 10px 10px 10px 10px;
+  margin: 0px 0px 15px 0px;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 3fr 7fr 6fr 6fr 2fr;
+}
+
+.rec {
+  background-color: #f4f4f4;
+  color: #696969;
+  border-radius: 3px;
+  padding: 10px 10px 10px 10px;
+  margin: 0px 0px 15px 0px;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 3fr 7fr 6fr 6fr 2fr;
+}
+
+.link-div {
+  height: 20px;
+  width: 40px;
+}
+
+.link-form {
+  background-color: #696969;
+  color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 10px;
+  height: 25px;
+  padding: 0;
+  width: 50px;
+}
+
+.link-form:hover {
+  cursor: pointer;
+}
+
+.link-form:focus {
+  outline: 0;
+}
+
+.remove-button {
+  background-color: #e85a4f;
+  color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-size: 10px;
+  /* font-weight: bold; */
+  padding: 0;
+  height: 25px;
+  width: 50px;
+}
+
+.remove-button:hover {
+  cursor: pointer;
+}
+
+.remove-button:focus {
+  outline: 0;
+}
+
+.meal-pic {
+  height: 60px;
+  width: 60px;
+  border: 1px solid #696969;
+  border-radius: 3px;
+}
+
+.meal-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.meal-details {
+  font-size: 15px;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }

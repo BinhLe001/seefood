@@ -8,21 +8,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: "Binh Le",
-      startFormSubmitted: true,
+      user: "Jian Yang",
+      calorieNeeds: 0
     };
   }
 
-  onStartFormSubmit = () => {
+  updateCalorieNeeds = calories => {
     this.setState({
-      startFormSubmitted: true
+      calorieNeeds: calories
     });
   };
 
   render() {
-    const bodyContent = this.state.startFormSubmitted ? (
+    const bodyContent = this.state.calorieNeeds ? (
       <div>
-        <DailyView user={this.state.user} />
+        <DailyView
+          user={this.state.user}
+          calorieNeeds={this.state.calorieNeeds}
+        />
       </div>
     ) : (
       <div>
@@ -30,7 +33,7 @@ class App extends Component {
         <div className="Start-form">
           <StartForm
             user={this.state.user}
-            onStartFormSubmit={this.onStartFormSubmit}
+            updateCalorieNeeds={this.updateCalorieNeeds}
           />
         </div>
       </div>

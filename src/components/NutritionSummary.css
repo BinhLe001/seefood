@@ -1,0 +1,19 @@
+.summary-table {
+  width: 100%;
+  font-size: 16px;
+  color: #696969;
+  border-collapse: separate;
+}
+
+.summary-loading {
+  padding-top: 30px;
+  text-align: center;
+}
+
+th {
+  font-size: 18px;
+}
+tr.table-body-row > td {
+  font-size: 16px;
+  padding-top: 10px;
+}

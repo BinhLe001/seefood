@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import "./MealsList.css";
 import SingleMeal from "./SingleMeal";
 
 class MealsList extends Component {
   render() {
     return (
       <div>
-        {this.props.meals.map(meal => {
+        {this.props.meals.map((meal, index) => {
           return (
-            <div key={meal}>
-              <SingleMeal meal={meal} />
+            <div key={index}>
+              <SingleMeal mealName={Object.keys(meal)[0]} mealDetails={meal[Object.keys(meal)[0]]} isMeal={true} onRemoveClicked={this.props.onRemoveClicked} index={index}/>
             </div>
           );
         })}

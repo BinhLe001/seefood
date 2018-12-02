@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 import "./StartForm.css";
+import axios from "axios";
+import Loader from "react-loader-spinner";
+
+// const url = "https://1ec702e5.ngrok.io";
+const url = "https://plurimi.serveo.net";
+
 
 class StartForm extends Component {
   constructor(props) {
@@ -7,7 +13,8 @@ class StartForm extends Component {
     this.state = {
       genderAnswer: "",
       ageAnswer: "",
-      activeAnswer: ""
+      activeAnswer: "",
+      submitLoading: false
     };
   }
 
@@ -26,26 +33,48 @@ class StartForm extends Component {
       if (this.state.genderAnswer === "" || this.state.activeAnswer === "") {
         alert("Please select an option for each question.");
       } else {
-        // Send user info to the back-end
-        alert(
-          "User: " +
-            this.props.user +
-            "\nGender: " +
-            this.state.genderAnswer +
-            "\nAge: " +
-            ageNumber +
-            "\nActivity: " +
-            this.state.activeAnswer
-        );
-        this.props.onStartFormSubmit()
+        this.setState({
+          submitLoading: true
+        });
+
+        let formData = new FormData();
+        formData.append("name", this.props.user);
+        formData.append("gender", this.state.genderAnswer);
+        formData.append("age", ageNumber);
+        formData.append("activity_level", this.state.activeAnswer);
+
+        axios({
+          method: "post",
+          url: url + "/user",
+          data: formData,
+          config: { headers: { "Content-Type": "multipart/form-data" } }
+        })
+          .then(response => {
+            this.props.updateCalorieNeeds(response.data);
+            this.setState({
+              submitLoading: false
+            });
+          })
+          .catch(error => {
+            alert("Form submission failed with " + error);
+            this.setState({
+              submitLoading: false
+            });
+          });
       }
     }
   };
 
   render() {
+    let buttonContent = this.state.submitLoading ? (
+      <Loader type="ThreeDots" color="#FFFFFF" height={10} width={60} />
+    ) : (
+      "Get Started"
+    );
+
     return (
       <div className="form">
-        <div className="form-header">Calculating Your Nutritional Needs</div>
+        <div className="form-header">Learning Your Nutrition Needs</div>
         <div className="form-body">
           <div className="form-question">Gender</div>
           <div className="form-answer">
@@ -122,8 +151,8 @@ class StartForm extends Component {
             </form>
           </div>
           <div className="button-div">
-            <button onClick={this.onSubmitForm} className="form-button">
-              Get Started
+            <button onClick={this.onSubmitForm} className="form-button" disabled={this.state.submitLoading}>
+              {buttonContent}
             </button>
           </div>
         </div>

@@ -1,5 +1,6 @@
 .hidden {
   visibility: hidden;
+  width: 1px;
 }
 
 .daily-view {
@@ -43,7 +44,7 @@
 
 .list-header {
   color: #696969;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding-bottom: 15px;
   display: flex;
@@ -55,7 +56,10 @@
   color: white;
   border-radius: 3px;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
+  padding: 3px 6px 3px 6px;
+  height: 24px;
+  width: 60px;
 }
 
 .add-meal-button:focus {
@@ -77,7 +81,7 @@
 
 .rec-header {
   color: #696969;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   padding-bottom: 15px;
 }
@@ -95,8 +99,12 @@
   padding: 15px 0px 15px 30px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 22px;
   border-radius: 2px 2px 0px 0px;
+}
+
+.nutrition-body {
+  margin: 20px 30px 0px 30px;
 }
 
 .daily-date {

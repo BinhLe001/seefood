@@ -61,6 +61,8 @@
   background-color: #4484ce;
   border: none;
   border-radius: 3px;
+  height: 34px;
+  width: 120px;
 }
 
 .form-button:focus {
