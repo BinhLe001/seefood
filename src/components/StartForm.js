@@ -5,7 +5,7 @@ class StartForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      sexAnswer: "",
+      genderAnswer: "",
       ageAnswer: "",
       activeAnswer: ""
     };
@@ -17,25 +17,67 @@ class StartForm extends Component {
     });
   };
 
-  onClick = () => {
-    // Send user info to the back-end
-    console.log(this.props.user);
+  onSubmitForm = () => {
+    const ageNumber = Number(this.state.ageAnswer);
+    // Check if age is a number
+    if (isNaN(ageNumber) || ageNumber < 2) {
+      alert("Please enter a valid number for age (at least 2).");
+    } else {
+      if (this.state.genderAnswer === "" || this.state.activeAnswer === "") {
+        alert("Please select an option for each question.");
+      } else {
+        // Send user info to the back-end
+        alert(
+          "User: " +
+            this.props.user +
+            "\nGender: " +
+            this.state.genderAnswer +
+            "\nAge: " +
+            ageNumber +
+            "\nActivity: " +
+            this.state.activeAnswer
+        );
+        this.props.onStartFormSubmit()
+      }
+    }
   };
 
   render() {
     return (
       <div className="form">
-        <div className="form-header">User Information</div>
+        <div className="form-header">Calculating Your Nutritional Needs</div>
         <div className="form-body">
-          <div className="form-question">Sex</div>
+          <div className="form-question">Gender</div>
           <div className="form-answer">
-            <input
-              name="sexAnswer"
-              onChange={event => this.onChange("sexAnswer", event)}
-              value={this.state.sexAnswer}
-              type="text"
-              className="answer-input"
-            />
+            <form className="genderForm">
+              <div>
+                <input
+                  type="radio"
+                  name="genderAnswer"
+                  value="Male"
+                  onChange={e => this.onChange("genderAnswer", e)}
+                />{" "}
+                Male
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="genderAnswer"
+                  value="Female"
+                  onChange={e => this.onChange("genderAnswer", e)}
+                />{" "}
+                Female
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="genderAnswer"
+                  value="Other"
+                  onChange={e => this.onChange("genderAnswer", e)}
+                />
+                Other
+              </div>
+            </form>
           </div>
           <div className="form-question">Age</div>
           <div className="form-answer">
@@ -43,22 +85,44 @@ class StartForm extends Component {
               name="ageAnswer"
               onChange={event => this.onChange("ageAnswer", event)}
               value={this.state.ageAnswer}
-              type="text"
+              type="number"
               className="answer-input"
             />
           </div>
           <div className="form-question">Physical Activity Level</div>
           <div className="form-answer">
-            <input
-              name="activeAnswer"
-              onChange={event => this.onChange("activeAnswer", event)}
-              value={this.state.activeAnswer}
-              type="text"
-              className="answer-input"
-            />
+            <form className="activeForm">
+              <div>
+                <input
+                  type="radio"
+                  name="activeAnswer"
+                  value="Sedentary"
+                  onChange={e => this.onChange("activeAnswer", e)}
+                />
+                Sedentary
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="activeAnswer"
+                  value="Moderately Active"
+                  onChange={e => this.onChange("activeAnswer", e)}
+                />
+                Moderately Active
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  name="activeAnswer"
+                  value="Active"
+                  onChange={e => this.onChange("activeAnswer", e)}
+                />
+                Active
+              </div>
+            </form>
           </div>
           <div className="button-div">
-            <button onClick={this.onClick()} className="form-button">
+            <button onClick={this.onSubmitForm} className="form-button">
               Get Started
             </button>
           </div>

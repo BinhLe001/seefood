@@ -31,11 +31,11 @@
 
 .form-answer {
   width: 100%;
-  text-align: center;
+  text-align: left;
 }
 
 .answer-input {
-  width: 95%;
+  width: 40%;
   color: #696969;
   background-color: #f4f4f4;
   font-size: 16px;
@@ -64,10 +64,20 @@
 }
 
 .form-button:focus {
-  box-shadow: 0 0 2pt 2pt #696969;
+  box-shadow: 0 0 1pt 1pt #696969;
   outline: 0;
 }
 
 .form-button:hover {
   cursor: pointer;
+}
+
+.genderForm {
+    display: flex;
+    justify-content: space-around;
+}
+
+.activeForm {
+    display: flex;
+    justify-content: space-around;
 }
