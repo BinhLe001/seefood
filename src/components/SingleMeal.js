@@ -3,7 +3,7 @@ import "./SingleMeal.css";
 
 class SingleMeal extends Component {
   render() {
-    let imageSrc = "/pics/" + this.props.mealName.replace(/\s/g, "") + ".jpeg";
+    let imageSrc = process.env.PUBLIC_URL + "/pics/" + this.props.mealName.replace(/\s/g, "") + ".jpeg";
     let mealContent = this.props.isMeal ? (
       <div className="meal">
         <img src={imageSrc} className="meal-pic" alt="" />
