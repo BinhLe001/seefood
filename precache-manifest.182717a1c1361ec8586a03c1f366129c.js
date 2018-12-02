@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/seefood/static/js/runtime~main.d75931f6.js"
   },
   {
-    "revision": "fe54335fb1995cdd2b6f",
-    "url": "/seefood/static/js/main.fe54335f.chunk.js"
+    "revision": "2bbcb38cbba2d3f6a9af",
+    "url": "/seefood/static/js/main.2bbcb38c.chunk.js"
   },
   {
     "revision": "8e8eb863bcd4c54731fe",
     "url": "/seefood/static/js/1.8e8eb863.chunk.js"
   },
   {
-    "revision": "fe54335fb1995cdd2b6f",
+    "revision": "2bbcb38cbba2d3f6a9af",
     "url": "/seefood/static/css/main.9af8405a.chunk.css"
   },
   {
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/seefood/static/css/1.f724bbb3.chunk.css"
   },
   {
-    "revision": "a2e5d031d803d0d58211e6a49c36612d",
+    "revision": "4f69d91b441230683b82a9734a7e4dbb",
     "url": "/seefood/index.html"
   }
 ];
